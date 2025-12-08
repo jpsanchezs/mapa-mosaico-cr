@@ -1,0 +1,848 @@
+Map {
+  background-color: #b8dee6;
+}
+
+// imagen base
+#demcolor {
+  raster-opacity: 0.85;
+  raster-scaling: bilinear;
+  raster-comp-op: overlay;
+  raster-filter-factor: 1.2;
+}
+
+// Límites
+// Provincias - visible a partir de zoom 8
+#geoprovincias {
+  line-color: #ff0000;
+  line-width: 1;
+  polygon-opacity: 0.2;
+  polygon-fill: #ffcccc;
+  text-name: [NPROVINCIA];
+  text-face-name: "Arial Bold";
+  text-fill: #ff0000;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+}
+
+#geoprovincias[zoom<=8] {
+  line-width: 0.7;
+  text-size: 12;
+}
+
+#geoprovincias[zoom>=9] {
+  line-width: 0.5;
+  text-size: 9;
+}
+
+// Distritos: visible a partir de zoom 13
+#distritoslaunionca {
+  line-color: #008000;
+  line-width: 0.5;
+  polygon-opacity: 0.2;
+  polygon-fill: #ccffcc;
+  text-name: [NDISTRITO];
+  text-face-name: "Arial Bold";
+  text-fill: #008000;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+}
+
+#distritoslaunionca[zoom<=10] {
+  text-size: 0;
+}
+
+#distritoslaunionca[zoom>=12] {
+  text-size: 10;
+}
+
+// Polígonos de La Unión - etiquetas visibles solo en zoom 12 a 15
+
+// Amenities
+#pgamenitylaunion {
+  line-color: #a52a2a;
+  line-width: 0.5;
+  polygon-opacity: 0.4;
+  polygon-fill: #f4a460;
+  text-name: [name];
+  text-face-name: "Arial Bold";
+  text-fill: #a52a2a;
+  text-allow-overlap: false;
+}
+
+#pgamenitylaunion[zoom<=11] { text-size: 0; }
+#pgamenitylaunion[zoom=12]  { text-size: 9; }
+#pgamenitylaunion[zoom=13]  { text-size: 9; }
+#pgamenitylaunion[zoom=14]  { text-size: 9; }
+#pgamenitylaunion[zoom=15]  { text-size: 9; }
+#pgamenitylaunion[zoom>=16] { text-size: 0; }
+
+// Landuse
+#pglanduselaunion {
+  line-color: #666666;
+  line-width: 0.5;
+  polygon-opacity: 0.3;
+  polygon-fill: #999999;
+  text-name: [name];
+  text-face-name: "Arial Bold";
+  text-fill: #333333;
+  text-allow-overlap: false;
+}
+
+#pglanduselaunion[zoom<=11] { text-size: 0; }
+#pglanduselaunion[zoom=12]  { text-size: 9; }
+#pglanduselaunion[zoom=13]  { text-size: 9; }
+#pglanduselaunion[zoom=14]  { text-size: 9; }
+#pglanduselaunion[zoom=15]  { text-size: 9; }
+#pglanduselaunion[zoom>=16] { text-size: 0; }
+
+// Leisure
+#pgleisurelaunion {
+  line-color: #006400;
+  line-width: 0.5;
+  polygon-opacity: 0.4;
+  polygon-fill: #32cd32;
+  text-name: [name];
+  text-face-name: "Arial Bold";
+  text-fill: #006400;
+  text-allow-overlap: false;
+}
+
+#pgleisurelaunion[zoom<=11] { text-size: 0; }
+#pgleisurelaunion[zoom=12]  { text-size: 9; }
+#pgleisurelaunion[zoom=13]  { text-size: 9; }
+#pgleisurelaunion[zoom=14]  { text-size: 9; }
+#pgleisurelaunion[zoom=15]  { text-size: 9; }
+#pgleisurelaunion[zoom>=16] { text-size: 0; }
+
+// Natural
+#pgnaturallaunion {
+  line-color: #1e90ff;
+  line-width: 0.5;
+  polygon-opacity: 0.4;
+  polygon-fill: #87cefa;
+  text-name: [name];
+  text-face-name: "Arial Bold";
+  text-fill: #1e90ff;
+  text-allow-overlap: false;
+}
+
+#pgnaturallaunion[zoom<=11] { text-size: 0; }
+#pgnaturallaunion[zoom=12]  { text-size: 9; }
+#pgnaturallaunion[zoom=13]  { text-size: 9; }
+#pgnaturallaunion[zoom=14]  { text-size: 9; }
+#pgnaturallaunion[zoom=15]  { text-size: 9; }
+#pgnaturallaunion[zoom>=16] { text-size: 0; }
+
+// Shop
+#pgshoplaunion {
+  line-color: #ff8c00;
+  line-width: 0.5;
+  polygon-opacity: 0.4;
+  polygon-fill: #ffd700;
+  text-name: [name];
+  text-face-name: "Arial Bold";
+  text-fill: #ff8c00;
+  text-allow-overlap: false;
+}
+
+#pgshoplaunion[zoom<=11] { text-size: 0; }
+#pgshoplaunion[zoom=12]  { text-size: 9; }
+#pgshoplaunion[zoom=13]  { text-size: 9; }
+#pgshoplaunion[zoom=14]  { text-size: 9; }
+#pgshoplaunion[zoom=15]  { text-size: 9; }
+#pgshoplaunion[zoom>=16] { text-size: 0; }
+
+// Turismo
+#turismolaunion {
+  line-color: #800080;
+  line-width: 0.5;
+  polygon-opacity: 0.4;
+  polygon-fill: #dda0dd;
+  text-name: [name];
+  text-face-name: "Arial Bold";
+  text-fill: #800080;
+  text-allow-overlap: false;
+}
+
+#turismolaunion[zoom<=11] { text-size: 0; }
+#turismolaunion[zoom=12]  { text-size: 9; }
+#turismolaunion[zoom=13]  { text-size: 9; }
+#turismolaunion[zoom=14]  { text-size: 9; }
+#turismolaunion[zoom=15]  { text-size: 9; }
+#turismolaunion[zoom>=16] { text-size: 0; }
+
+
+// ---------------------------
+
+// Líneas dentro de La Unión (ríos y carreteras)
+#carreteraslaunion[zoom>=13][TIPO='CARRETERA NACIONAL'] {
+  line-width: 0.8;
+  line-color: #000000;
+  text-name: [TIPO];            // usa TIPO en lugar de NOMBRE
+  text-face-name: "Arial Bold";
+  text-placement: line;
+  text-size: 10;
+  text-fill: #000000;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+}
+
+#carreteraslaunion[zoom>=13][TIPO='CARRETERA CANTONAL'] {
+  line-width: 0.8;
+  line-color: #808080;
+  text-name: [TIPO];            // igual aquí
+  text-face-name: "Arial Regular";
+  text-placement: line;
+  text-size: 9;
+  text-fill: #808080;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+}
+
+// Carreteras OSM (columna sub_type)
+#lnhighwaylaunion[zoom>=13][sub_type='trunk'] {
+  line-width: 0.8;
+  line-color: #ff0000;   // rojo para trunk
+  text-name: [name];
+  text-face-name: "Arial Bold";
+  text-placement: line;
+  text-size: 10;
+  text-fill: #ff0000;
+}
+
+#lnhighwaylaunion[zoom>=13][sub_type='secondary'] {
+  line-width: 0.8;
+  line-color: #ffa500;   // naranja para secondary
+  text-name: [name];
+  text-face-name: "Arial Bold";
+  text-placement: line;
+  text-size: 9;
+  text-fill: #ffa500;
+}
+
+#lnhighwaylaunion[zoom>=13][sub_type='tertiary'] {
+  line-width: 0.8;
+  line-color: #ffff00;   // amarillo para tertiary
+  text-name: [name];
+  text-face-name: "Arial Regular";
+  text-placement: line;
+  text-size: 9;
+  text-fill: #999900;
+}
+
+#lnhighwaylaunion[zoom>=13][sub_type='residential'] {
+  line-width: 0.8;
+  line-color: #808080;   // gris para residenciales
+  text-name: [name];
+  text-face-name: "Arial Regular";
+  text-placement: line;
+  text-size: 8;
+  text-fill: #666666;
+}
+
+#lnhighwaylaunion[zoom>=13][sub_type='path'],
+#lnhighwaylaunion[zoom>=13][sub_type='unclassified'],
+#lnhighwaylaunion[zoom>=13][sub_type='trunk_link'] {
+  line-width: 0.8;
+  line-color: #cccccc;   // gris claro para caminos menores
+  text-name: [name];
+  text-face-name: "Arial Regular";
+  text-placement: line;
+  text-size: 8;
+  text-fill: #999999;
+}
+
+// Ríos OSM (columna sub_type)
+#lnwaterwaylaunion[zoom>=13][sub_type='river'] {
+  line-width: 0.8;
+  line-color: #0000ff;   // azul fuerte para ríos
+  text-name: [name];
+  text-face-name: "Arial Italic";
+  text-placement: line;
+  text-size: 9;
+  text-fill: #0000ff;
+}
+
+#lnwaterwaylaunion[zoom>=13][sub_type='stream'] {
+  line-width: 0.8;
+  line-color: #87cefa;   // azul claro para quebradas/streams
+  text-name: [name];
+  text-face-name: "Arial Italic";
+  text-placement: line;
+  text-size: 8;
+  text-fill: #4682b4;
+}
+
+// Ríos del shapefile del profe (solo nombre)
+#rioslaunion[zoom>=13] {
+  line-width: 0.8;
+  line-color: #1e90ff;   // azul intermedio
+  text-name: [NOMBRE];
+  text-face-name: "Arial Italic";
+  text-placement: line;
+  text-size: 9;
+  text-fill: #1e90ff;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+}
+
+// ---------------------------------------
+// PUNTOS
+
+#launionpoblados[zoom>=15] {
+  marker-width: 6;
+  marker-fill: #f45;
+  marker-line-color: #813;
+  marker-allow-overlap: true;
+
+  text-name: [NOMBRE];             // columna correcta
+  text-face-name: "DejaVu Sans Book"; // fuente con soporte UTF-8
+  text-size: 11;
+  text-fill: #333333;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-allow-overlap: true;        // fuerza a mostrar todas
+  text-dy: -10;                    // desplaza arriba del punto
+}
+
+// Escuelas
+#ptamenitylaunion[zoom>=15][sub_type='school'] {
+  marker-width: 6;
+  marker-fill: #1f77b4;        // azul → escuelas
+  marker-line-color: #104070;
+  marker-allow-overlap: true;
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 9;
+  text-fill: #1f77b4;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Hospitales / clínicas / doctores
+#ptamenitylaunion[zoom>=15][sub_type='hospital'],
+#ptamenitylaunion[zoom>=15][sub_type='clinic'],
+#ptamenitylaunion[zoom>=15][sub_type='doctors'] {
+  marker-width: 6;
+  marker-fill: #d62728;        // rojo → salud
+  marker-line-color: #801515;
+  marker-allow-overlap: false;
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 9;
+  text-fill: #d62728;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+}
+
+// Bancos
+#ptamenitylaunion[zoom>=15][sub_type='bank'] {
+  marker-width: 6;
+  marker-fill: #2ca02c;        // verde → bancos
+  marker-line-color: #145214;
+  marker-allow-overlap: false;
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 9;
+  text-fill: #2ca02c;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+}
+
+// Restaurantes / fast food / cafés / bares / pubs
+#ptamenitylaunion[zoom>=15][sub_type='restaurant'],
+#ptamenitylaunion[zoom>=15][sub_type='fast_food'],
+#ptamenitylaunion[zoom>=15][sub_type='cafe'],
+#ptamenitylaunion[zoom>=15][sub_type='bar'],
+#ptamenitylaunion[zoom>=15][sub_type='pub'] {
+  marker-width: 6;
+  marker-fill: #ff7f0e;        // naranja → comida/bebida
+  marker-line-color: #a34700;
+  marker-allow-overlap: false;
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 9;
+  text-fill: #ff7f0e;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+}
+
+// Iglesias / templos
+#ptamenitylaunion[zoom>=15][sub_type='place_of_worship'] {
+  marker-width: 6;
+  marker-fill: #9467bd;        // púrpura → iglesias
+  marker-line-color: #5a2d82;
+  marker-allow-overlap: false;
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 9;
+  text-fill: #9467bd;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+}
+
+// Policía
+#ptamenitylaunion[zoom>=15][sub_type='police'] {
+  marker-width: 6;
+  marker-fill: #17becf;        // celeste → policía
+  marker-line-color: #0a5a60;
+  marker-allow-overlap: false;
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 9;
+  text-fill: #17becf;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+}
+
+// Farmacias
+#ptamenitylaunion[zoom>=15][sub_type='pharmacy'] {
+  marker-width: 6;
+  marker-fill: #bcbd22;        // amarillo verdoso → farmacias
+  marker-line-color: #6a6b12;
+  marker-allow-overlap: false;
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 9;
+  text-fill: #bcbd22;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+}
+
+// Cines
+#ptamenitylaunion[zoom>=15][sub_type='cinema'] {
+  marker-width: 6;
+  marker-fill: #e377c2;        // rosa → cines
+  marker-line-color: #a14d86;
+  marker-allow-overlap: true;
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 9;
+  text-fill: #e377c2;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+}
+
+// Paradas de bus
+#pthighwaylaunion[zoom>=15][sub_type='bus_stop'] {
+  marker-width: 6;
+  marker-fill: #008080;        // teal → paradas de bus
+  marker-line-color: #004c4c;
+  marker-allow-overlap: true;
+
+  text-name: [name];           // etiqueta con el nombre
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #008080;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;                // desplaza arriba del punto
+  text-allow-overlap: true;
+}
+
+// Intersecciones de autopista
+#pthighwaylaunion[zoom>=15][sub_type='motorway_junction'] {
+  marker-width: 6;
+  marker-fill: #ff1493;        // rosa fuerte → intersecciones
+  marker-line-color: #80004c;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #ff1493;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Parques
+#ptleisurelaunion[zoom>=15][sub_type='park'] {
+  marker-width: 6;
+  marker-fill: #228B22;        // verde bosque → parques
+  marker-line-color: #145214;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #228B22;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Dog parks
+#ptleisurelaunion[zoom>=15][sub_type='dog_park'] {
+  marker-width: 6;
+  marker-fill: #ff69b4;        // rosa → parques para perros
+  marker-line-color: #a14d86;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #ff69b4;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Fitness centres
+#ptleisurelaunion[zoom>=15][sub_type='fitness_centre'] {
+  marker-width: 6;
+  marker-fill: #0000cd;        // azul medio → gimnasios
+  marker-line-color: #000080;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #0000cd;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Fitness stations
+#ptleisurelaunion[zoom>=15][sub_type='fitness_station'] {
+  marker-width: 6;
+  marker-fill: #ffa07a;        // salmón → estaciones biosaludables
+  marker-line-color: #a34700;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #ffa07a;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Tracks
+#ptleisurelaunion[zoom>=15][sub_type='track'] {
+  marker-width: 6;
+  marker-fill: #8b4513;        // marrón → pistas/caminos deportivos
+  marker-line-color: #5a2d0a;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #8b4513;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Reservas naturales
+#ptleisurelaunion[zoom>=15][sub_type='nature_reserve'] {
+  marker-width: 6;
+  marker-fill: #20b2aa;        // verde azulado → reservas naturales
+  marker-line-color: #0a5a60;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #20b2aa;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Natural La Unión 
+// Picos / cerros
+#ptnaturallaunion[zoom>=15][sub_type='peak'] {
+  marker-width: 6;
+  marker-fill: #8A2BE2;        // violeta → cerros/picos
+  marker-line-color: #4B0082;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #8A2BE2;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;                // desplaza arriba del punto
+  text-allow-overlap: true;
+}
+
+// Rocas destacadas
+#ptnaturallaunion[zoom>=15][sub_type='rock'] {
+  marker-width: 6;
+  marker-fill: #A0522D;        // marrón → rocas
+  marker-line-color: #5a2d0a;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #A0522D;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Pueblos / villages
+#ptplacelaunion[zoom>=15][sub_type='village'] {
+  marker-width: 6;
+  marker-fill: #ff4500;        // naranja rojizo → villages
+  marker-line-color: #802200;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #ff4500;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Barrios / neighbourhoods
+#ptplacelaunion[zoom>=15][sub_type='neighbourhood'] {
+  marker-width: 6;
+  marker-fill: #4682b4;        // azul acero → neighbourhoods
+  marker-line-color: #2a4c70;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #4682b4;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Ciudades / towns
+#ptplacelaunion[zoom>=15][sub_type='town'] {
+  marker-width: 6;
+  marker-fill: #ffd700;        // dorado → towns
+  marker-line-color: #b8860b;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #ffd700;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Fincas / farms
+#ptplacelaunion[zoom>=15][sub_type='farm'] {
+  marker-width: 6;
+  marker-fill: #32cd32;        // verde lima → farms
+  marker-line-color: #228b22;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #32cd32;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Supermercados / convenience
+#ptshoplaunion[zoom>=15][sub_type='convenience'],
+#ptshoplaunion[zoom>=15][sub_type='supermarket'] {
+  marker-width: 6;
+  marker-fill: #ff6347;        // rojo tomate → supermercados y minisupers
+  marker-line-color: #802a1a;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #ff6347;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Panaderías / pastelerías
+#ptshoplaunion[zoom>=15][sub_type='bakery'],
+#ptshoplaunion[zoom>=15][sub_type='pastry'] {
+  marker-width: 6;
+  marker-fill: #deb887;        // beige → panaderías/pastelerías
+  marker-line-color: #8b5a2b;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #deb887;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Tiendas de ropa / accesorios
+#ptshoplaunion[zoom>=15][sub_type='clothes'],
+#ptshoplaunion[zoom>=15][sub_type='fashion_accessories'],
+#ptshoplaunion[zoom>=15][sub_type='shoes'] {
+  marker-width: 6;
+  marker-fill: #ff1493;        // rosa fuerte → ropa y accesorios
+  marker-line-color: #80004c;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #ff1493;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Librerías / libros
+#ptshoplaunion[zoom>=15][sub_type='books'] {
+  marker-width: 6;
+  marker-fill: #4169e1;        // azul real → librerías
+  marker-line-color: #27408b;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #4169e1;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Ferreterías / hardware
+#ptshoplaunion[zoom>=15][sub_type='hardware'] {
+  marker-width: 6;
+  marker-fill: #708090;        // gris pizarra → ferreterías
+  marker-line-color: #2f4f4f;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #708090;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Talleres / reparación de autos y motos
+#ptshoplaunion[zoom>=15][sub_type='car_repair'],
+#ptshoplaunion[zoom>=15][sub_type='motorcycle_repair'] {
+  marker-width: 6;
+  marker-fill: #32cd32;        // verde lima → talleres mecánicos
+  marker-line-color: #228b22;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #32cd32;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+// Belleza / peluquerías / cosméticos
+#ptshoplaunion[zoom>=15][sub_type='beauty'],
+#ptshoplaunion[zoom>=15][sub_type='hairdresser'],
+#ptshoplaunion[zoom>=15][sub_type='cosmetics'] {
+  marker-width: 6;
+  marker-fill: #dda0dd;        // púrpura claro → belleza y estética
+  marker-line-color: #800080;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #dda0dd;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
+#ptshoplaunion[zoom>=15][sub_type='general'],
+#ptshoplaunion[zoom>=15][sub_type='variety_store'],
+#ptshoplaunion[zoom>=15][sub_type='department_store'] {
+  marker-width: 6;
+  marker-fill: #20b2aa;        // verde azulado → comercios generales
+  marker-line-color: #0a5a60;
+  marker-allow-overlap: true;
+
+  text-name: [name];
+  text-face-name: "DejaVu Sans Book";
+  text-size: 10;
+  text-fill: #20b2aa;
+  text-halo-fill: #ffffff;
+  text-halo-radius: 1;
+  text-placement: point;
+  text-dy: -10;
+  text-allow-overlap: true;
+}
+
