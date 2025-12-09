@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa Mosaico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; font-family: sans-serif; }
+    #map { height: calc(100vh - 50px); }
+    .topbar {
+      background: #0052cc;
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+    .legend {
+      position: absolute;
+      bottom: 30px;
+      right: 10px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+      max-width: 250px;
+      font-size: 13px;
+      color: #333;
+    }
+    .legend h4 {
+      margin-bottom: 10px;
+      color: #0052cc;
+      font-size: 15px;
+      border-bottom: 2px solid #0052cc;
+      padding-bottom: 5px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin: 6px 0;
+    }
+    .legend-color {
+      width: 30px;
+      height: 20px;
+      margin-right: 10px;
+      border: 1px solid #333;
+      border-radius: 3px;
+    }
+    /* Ventana modal para Guía de usuario */
+    #guia {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      z-index: 1000;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      max-width: 300px;
+      font-size: 14px;
+      color: #333;
+    }
+    #guia button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div>🗺️ Mapa Mosaico</div>
+    <button onclick="document.getElementById('guia').style.display='block'" 
+            style="font-size:16px;padding:6px 12px;border:none;background:#ff9800;color:white;border-radius:6px;">
+      📖 Guía de usuario
+    </button>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- Ventana Guía de usuario -->
+  <div id="guia">
+    <b>Guía de usuario</b><br><br>
+    Aquí puedes explicar cómo navegar el mapa, qué significan los colores, cómo usar el zoom, etc.
+    <br><br>
+    <button onclick="document.getElementById('guia').style.display='none'">Cerrar</button>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script>
+    // Inicializar mapa centrado en Costa Rica
+    const map = L.map('map').setView([9.9, -84.0], 8);
+
+    // Cargar mosaicos desde carpetas 8, 9, 10... en raíz
+    L.tileLayer('./mosaico/{z}/{x}/{y}.png', {
+      attribution: 'Datos: Mosaico generado con MBTiles',
+      minZoom: 8,
+      maxZoom: 16,
+      tileSize: 256
+    }).addTo(map);
+
+    // Escala métrica
+    L.control.scale({ metric: true, imperial: false, position: 'bottomleft' }).addTo(map);
+  </script>
+</body>
+</html>
