@@ -77,22 +77,106 @@
 </head>
 <body>
   <div class="topbar">
-    <div>🗺️ Mapa Mosaico</div>
+    <div>Mapa Mosaico </div>
     <button onclick="document.getElementById('guia').style.display='block'" 
             style="font-size:16px;padding:6px 12px;border:none;background:#ff9800;color:white;border-radius:6px;">
-      📖 Guía de usuario
+      Guía de usuario
     </button>
   </div>
 
   <div id="map"></div>
 
-  <!-- Ventana Guía de usuario -->
-  <div id="guia">
-    <b>Guía de usuario</b><br><br>
-    Aquí puedes explicar cómo navegar el mapa, qué significan los colores, cómo usar el zoom, etc.
-    <br><br>
+<!-- Ventana Guía de usuario -->
+<div id="guia">
+  <b>Guía de usuario</b><br><br>
+  <p>
+    El presente mapa muestra la cartografía temática del <b>Cantón de La Unión, Cartago, Costa Rica</b>, 
+    incluyendo límites administrativos, usos de suelo, servicios, infraestructura vial y elementos naturales. 
+    Cada color representa un tipo de entidad geográfica o servicio y las etiquetas aparecen según el nivel de zoom (8-16).
+  </p>
+
+  <h4>Colores y significados</h4>
+    <ul style="list-style:none; padding-left:0; font-size:14px;">
+        <!-- Provincias -->
+        <li><span style="color:#ff0000;">■</span> Límites de provincias (rojo)</li>
+        <!-- Distritos -->
+        <li><span style="color:#008000;">■</span> Límites de distritos (verde)</li>
+        <!-- Amenities -->
+        <li><span style="color:#a52a2a;">■</span> Polígonos de servicios/amenities (marrón)</li>
+        <!-- Landuse -->
+        <li><span style="color:#666666;">■</span> Usos de suelo (gris)</li>
+        <!-- Leisure -->
+        <li><span style="color:#006400;">■</span> Áreas de ocio/leisure (verde oscuro)</li>
+        <!-- Natural -->
+        <li><span style="color:#1e90ff;">■</span> Áreas naturales (azul intermedio)</li>
+        <!-- Shop -->
+        <li><span style="color:#ff8c00;">■</span> Áreas comerciales/shops (naranja)</li>
+        <!-- Turismo -->
+        <li><span style="color:#800080;">■</span> Áreas turísticas (púrpura)</li>
+        <!-- Carreteras -->
+        <li><span style="color:#000000;">■</span> Carreteras nacionales (negro)</li>
+        <li><span style="color:#808080;">■</span> Carreteras cantonales (gris)</li>
+        <li><span style="color:#ff0000;">■</span> Carreteras trunk OSM (rojo)</li>
+        <li><span style="color:#ffa500;">■</span> Carreteras secondary OSM (naranja)</li>
+        <li><span style="color:#ffff00;">■</span> Carreteras tertiary OSM (amarillo)</li>
+        <li><span style="color:#666666;">■</span> Carreteras residenciales OSM (gris oscuro)</li>
+        <li><span style="color:#cccccc;">■</span> Caminos menores OSM (gris claro)</li>
+        <!-- Ríos -->
+        <li><span style="color:#0000ff;">■</span> Ríos OSM (azul fuerte)</li>
+        <li><span style="color:#87cefa;">■</span> Quebradas/streams OSM (azul claro)</li>
+        <li><span style="color:#1e90ff;">■</span> Ríos shapefile profesor (azul intermedio)</li>
+        <!-- Poblados -->
+        <li><span style="color:#f45;">●</span> Poblados (rosado)</li>
+        <!-- Escuelas -->
+        <li><span style="color:#1f77b4;">●</span> Escuelas (azul)</li>
+        <!-- Salud -->
+        <li><span style="color:#d62728;">●</span> Hospitales/Clínicas/Doctores (rojo)</li>
+        <!-- Bancos -->
+        <li><span style="color:#2ca02c;">●</span> Bancos (verde)</li>
+        <!-- Restaurantes -->
+        <li><span style="color:#ff7f0e;">●</span> Restaurantes/cafés/bars/pubs (naranja)</li>
+        <!-- Iglesias -->
+        <li><span style="color:#9467bd;">●</span> Iglesias/templos (púrpura)</li>
+        <!-- Policía -->
+        <li><span style="color:#17becf;">●</span> Policía (celeste)</li>
+        <!-- Farmacias -->
+        <li><span style="color:#bcbd22;">●</span> Farmacias (amarillo verdoso)</li>
+        <!-- Cines -->
+        <li><span style="color:#e377c2;">●</span> Cines (rosa)</li>
+        <!-- Paradas de bus -->
+        <li><span style="color:#008080;">●</span> Paradas de bus (teal)</li>
+        <!-- Intersecciones -->
+        <li><span style="color:#ff1493;">●</span> Intersecciones de autopista (rosa fuerte)</li>
+        <!-- Parques -->
+        <li><span style="color:#228B22;">●</span> Parques (verde bosque)</li>
+        <li><span style="color:#ff69b4;">●</span> Parques para perros (rosa)</li>
+        <!-- Gimnasios -->
+        <li><span style="color:#0000cd;">●</span> Gimnasios (azul medio)</li>
+        <li><span style="color:#ffa07a;">●</span> Estaciones biosaludables (salmón)</li>
+        <li><span style="color:#8b4513;">●</span> Pistas deportivas (marrón)</li>
+        <li><span style="color:#20b2aa;">●</span> Reservas naturales (verde azulado)</li>
+        <!-- Picos -->
+        <li><span style="color:#8A2BE2;">●</span> Picos/cerros (violeta)</li>
+        <li><span style="color:#A0522D;">●</span> Rocas destacadas (marrón)</li>
+        <!-- Pueblos -->
+        <li><span style="color:#ff4500;">●</span> Villages (naranja rojizo)</li>
+        <li><span style="color:#4682b4;">●</span> Barrios/neighbourhoods (azul acero)</li>
+        <li><span style="color:#ffd700;">●</span> Towns (dorado)</li>
+        <li><span style="color:#32cd32;">●</span> Fincas/farms (verde lima)</li>
+        <!-- Comercios -->
+        <li><span style="color:#ff6347;">●</span> Supermercados/minisupers (rojo tomate)</li>
+        <li><span style="color:#deb887;">●</span> Panaderías/pastelerías (beige)</li>
+        <li><span style="color:#ff1493;">●</span> Tiendas de ropa/accesorios (rosa fuerte)</li>
+        <li><span style="color:#4169e1;">●</span> Librerías (azul real)</li>
+        <li><span style="color:#708090;">●</span> Ferreterías (gris pizarra)</li>
+        <li><span style="color:#32cd32;">●</span> Talleres mecánicos (verde lima)</li>
+        <li><span style="color:#dda0dd;">●</span> Belleza/peluquerías/cosméticos (púrpura claro)</li>
+        <li><span style="color:#20b2aa;">●</span> Comercios generales (verde azulado)</li>
+    </ul>
+
+    <br>
     <button onclick="document.getElementById('guia').style.display='none'">Cerrar</button>
-  </div>
+    </div>
 
   <!-- Leaflet JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
